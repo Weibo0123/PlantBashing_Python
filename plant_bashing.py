@@ -15,6 +15,7 @@ def greet_player():
     name = input("What is your name? ")
     print(f"Hello {name}!")
     time.sleep(3)
+    assign_name()
     print("In the Computer's digital world, time moves much faster than it does outside.")
 
 
@@ -39,6 +40,16 @@ def is_yes_or_no(prompt="Please answer"):
                 return False  # user chose no
         else:
             print("You can only answer yes or no. Please try again\n")
+
+
+def assign_name():
+    if is_yes_or_no("Do you want to name the plant?"):
+        plant_name = input("What do you want to name it? ")
+    else:
+        plant_name = "Morpheus"
+    
+    print(f"Your plant's name is {plant_name}!")
+
 
 
 def store_message(day):
@@ -106,7 +117,7 @@ def main():
     #print("is running in MAIN")
     greet_player()
 
-    while is_yes_or_no("\nWould you like to grow a new plant?"):
+    while is_yes_or_no("\nWould you like to grow a new plant?\n"):
         game_loop()
 
     farewell_player()
